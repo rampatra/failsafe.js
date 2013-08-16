@@ -1,0 +1,38 @@
+{
+    "name": "failsafe",
+    "title": "FailSafe",
+    "description": "A jQuery Plugin to make your App Robust. Protects your App from Lost Internet Connectivity & Low Battery Level.",
+    "keywords": [
+        "failsafe",        
+        "checknet",
+        "checkbattery",
+        "internet",
+        "connectivity"
+    ],
+        "version": "1.0.0",
+        "author": {
+            "name": "Ram Swaroop",
+            "email": "ramswarooppatra@gmail.com",
+            "url": "http://www.ramswaroop.me"
+    },
+    "maintainers": [
+        {
+            "name": "Compzets.com",
+            "email": "support@compzets.com",
+            "url": "http://www.compzets.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/ramswaroop/failsafe.js/blob/master/MIT-License.txt"
+        }
+    ],
+    "bugs": "https://github.com/ramswaroop/failsafe.js/issues",
+    "homepage": "http://plugins.compzets.com/failsafe",
+    "demo": "http://plugins.compzets.com/failsafe",
+    "docs": "https://github.com/ramswaroop/failsafe.js/blob/master/README.md",
+    "dependencies": {
+    "jquery": ">=1.5"
+    }
+}
