@@ -1,6 +1,7 @@
 /*
  * @build  : 10 Aug, 2013
  * @author : Ram swaroop
+ * @company: Compzets.com
  */
 (function($){
     
