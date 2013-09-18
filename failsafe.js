@@ -102,12 +102,10 @@
         },
 
         // called when network state changes to offline
-        onOffline : function(options) {
+        onOffline : function(opts) {
             if(netFlag == "online") {
                 // change flag
                 netFlag = "offline";
-                // fetches options
-                var opts = $.extend({},$.failsafe.defaults,options);
                 // check battery status
                 if(batteryFlag == "batteryLow") {
                     $('.fs-fig').append(sepFig);
@@ -120,26 +118,24 @@
                         $('.fs-fig').append(netFig);
                         $('.bar').css('background-color','#F00');
                         $('.fs-container').append("<div class='fs-msg'>"+opts.offlineMsg+"</div>");
-                        $.failsafe.disableElements(options);
+                        $.failsafe.disableElements(opts);
                     });                  
                 }
             }
         },
 
         // called when network state changes to online
-        onOnline : function(options) {
+        onOnline : function(opts) {
             if(netFlag == "offline") {
                 // change flag
                 netFlag = "online";
-                // fetches options
-                var opts = $.extend({},$.failsafe.defaults,options);
                 // clears the message on top
                 if($('.fs-overlay').length != 0 || $('.fs-container').length !=0)
                     $.failsafe.remove({removeDelay:0});
                 $.failsafe.init(function(){
                     $('.fs-fig').append(netFig);
                     $('.fs-container').append("<div class='fs-msg'>"+opts.onlineMsg+"</div>"); 
-                    $.failsafe.remove(options);  
+                    $.failsafe.remove(opts);  
                 });                
                 // check battery and show proper msg
                 if(batteryFlag == "batteryLow") {
@@ -149,16 +145,14 @@
                     });
                     return;
                 }
-                $.failsafe.enableElements(options);
+                $.failsafe.enableElements(opts);
             }
         },
 
-        onBatteryLow : function(options) {
+        onBatteryLow : function(opts) {
             if(batteryFlag == "charging") {
                 // change flag
-                batteryFlag = "batteryLow";
-                // fetches options
-                var opts = $.extend({},$.failsafe.defaults,options);            
+                batteryFlag = "batteryLow";          
                 // check for internet connectivity
                 if(netFlag == "offline") {
                     $('.fs-fig').append(sepFig);
@@ -169,7 +163,7 @@
                     $.failsafe.init(function(){
                         $('.fs-fig').append(batteryFig);
                         $('.fs-container').append("<div class='fs-msg'>"+opts.batteryLowMsg+"</div>");                
-                        $.failsafe.disableElements(options);
+                        $.failsafe.disableElements(opts);
                     });
                 }
                 $('.battery-charge').animate({width:(battery.level*100)+"%"});
@@ -177,19 +171,17 @@
             }
         },
 
-        onCharging : function(options) {
+        onCharging : function(opts) {
             if(batteryFlag == "batteryLow") {
                 // change flag
                 batteryFlag = "charging";
-                // fetches options
-                var opts = $.extend({},$.failsafe.defaults,options);
                 // clears the message on top
                 if($('.fs-overlay').length != 0 || $('.fs-container').length !=0)
                     $.failsafe.remove({removeDelay:0});
                 $.failsafe.init(function(){
                     $('.fs-fig').append(batteryFig);
                     $('.fs-container').append("<div class='fs-msg'>"+opts.chargingMsg+"</div>"); 
-                    $.failsafe.remove(options);
+                    $.failsafe.remove(opts);
                 });
                 // check internet connectivity and show proper msg
                 if(netFlag == "offline") {
@@ -199,23 +191,19 @@
                     });
                     return;
                 }
-                $.failsafe.enableElements(options);
+                $.failsafe.enableElements(opts);
             }
         },
 
         // enable the disabled elements
-        enableElements : function(options) {
-            // fetches options
-            var opts = $.extend({},$.failsafe.defaults,options);
+        enableElements : function(opts) {
             if(opts.disableElements!="") {
                 $(opts.disableElements).removeAttr('disabled');
             }
         },
 
         // disable one or more elements
-        disableElements : function(options) {
-            // fetches options
-            var opts = $.extend({},$.failsafe.defaults,options);
+        disableElements : function(opts) {
             if(opts.disableElements!="") {
                 $(opts.disableElements).attr('disabled','disabled');
             }
@@ -229,9 +217,7 @@
         },
                 
         // removes all tags added by failsafe
-        remove : function(options) {
-            // fetches options
-            var opts = $.extend({},$.failsafe.defaults,options);
+        remove : function(opts) {
             $('.fs-overlay').fadeOut(opts.removeDelay).remove();
             $('.fs-container').fadeOut(opts.removeDelay).remove();            
         },
