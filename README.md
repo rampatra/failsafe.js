@@ -11,4 +11,4 @@ FailSafe is a jQuery plugin to help your application work correct even in peril 
 Demo & Usage
 ============
 
-For Demo or Usage of this plugin, please visit --> http://plugins.compzets.com/failsafe/
+For Demo or Usage of this plugin, please visit &rarr; http://plugins.compzets.com/failsafe/
