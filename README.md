@@ -12,3 +12,7 @@ Demo & Usage
 ============
 
 For Demo or Usage of this plugin, please visit &rarr; http://plugins.compzets.com/failsafe/
+
+---
+
+_P.S. If my open-source project(s) benefitted you in some way or the other, a follow on [Twitter](https://twitter.com/ram__patra) would be greatly appreciated 🙇‍♂️._
