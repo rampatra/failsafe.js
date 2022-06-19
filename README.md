@@ -15,4 +15,4 @@ For Demo or Usage of this plugin, please visit &rarr; http://plugins.compzets.co
 
 ---
 
-_P.S. If my open-source project(s) benefitted you in some way or the other, a follow on [Twitter](https://twitter.com/ram__patra) would be greatly appreciated 🙇‍♂️._
+_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help 🙏._
